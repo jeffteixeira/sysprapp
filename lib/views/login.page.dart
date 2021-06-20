@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sysprapp/routes/app_routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -39,7 +40,11 @@ class _LoginPageState extends State<LoginPage> {
               ButtonTheme(
                   height: 60.0,
                   child: RaisedButton(
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.LIST_EVENT,
+                      ),
+                    },
                     child: Text(
                       "Entrar",
                       style: TextStyle(color: Colors.deepPurple),
