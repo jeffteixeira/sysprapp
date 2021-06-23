@@ -1,5 +1,5 @@
 class AppRoutes {
   static const HOME = '/';
-  static const LIST_EVENT = '/event_list';
-  static const EVENT_FORM = '/event-form';
+  static const USER_FORM = '/user-form';
+  static const USER_LIST = '/user-list';
 }

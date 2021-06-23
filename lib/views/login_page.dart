@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sysprapp/routes/app_routes.dart';
+import 'package:flutter_crud/routes/app_routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: RaisedButton(
                     onPressed: () => {
                       Navigator.of(context).pushNamed(
-                        AppRoutes.LIST_EVENT,
+                        AppRoutes.USER_LIST,
                       ),
                     },
                     child: Text(

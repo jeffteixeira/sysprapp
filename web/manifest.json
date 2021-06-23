@@ -1,6 +1,6 @@
 {
-    "name": "sysprapp",
-    "short_name": "sysprapp",
+    "name": "flutter_crud",
+    "short_name": "flutter_crud",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/provider/users.dart';
+import 'package:flutter_crud/routes/app_routes.dart';
+import 'package:flutter_crud/views/user_form.dart';
+import 'package:flutter_crud/views/user_list.dart';
+import 'package:flutter_crud/views/login_page.dart';
+
 import 'package:provider/provider.dart';
-import 'package:sysprapp/provider/events.dart';
-import 'package:sysprapp/routes/app_routes.dart';
-import 'package:sysprapp/views/event_form.dart';
-import 'package:sysprapp/views/event_list.dart';
-import 'package:sysprapp/views/login.page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,18 +17,19 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (ctx) => new Events(),
+          create: (ctx) => Users(),
         ),
       ],
       child: MaterialApp(
-        title: 'SysprApp',
+        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
           AppRoutes.HOME: (_) => LoginPage(),
-          AppRoutes.LIST_EVENT: (_) => EventList(),
-          AppRoutes.EVENT_FORM: (_) => EventForm(),
+          AppRoutes.USER_LIST: (_) => UserList(),
+          AppRoutes.USER_FORM: (_) => UserForm()
         },
       ),
     );
