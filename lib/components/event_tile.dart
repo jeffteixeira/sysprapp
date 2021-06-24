@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/models/user.dart';
-import 'package:flutter_crud/provider/users.dart';
+import 'package:flutter_crud/models/event.dart';
+import 'package:flutter_crud/provider/events.dart';
 import 'package:flutter_crud/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
-class UserTile extends StatelessWidget {
-  final User user;
+class EventTile extends StatelessWidget {
+  final Event event;
 
-  const UserTile(this.user);
+  const EventTile(this.event);
 
   @override
   Widget build(BuildContext context) {
     final avatar = Icon(Icons.event);
     return ListTile(
       leading: avatar,
-      title: Text(user.name),
-      subtitle: Text(user.date),
+      title: Text(event.name),
+      subtitle: Text(event.date),
       trailing: Container(
         width: 100,
         child: Row(
@@ -25,8 +25,8 @@ class UserTile extends StatelessWidget {
               color: Colors.orange,
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  AppRoutes.USER_FORM,
-                  arguments: user,
+                  AppRoutes.EVENT_FORM,
+                  arguments: event,
                 );
               },
             ),
@@ -37,7 +37,7 @@ class UserTile extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: Text('Excluir Usuário'),
+                    title: Text('Excluir evento'),
                     content: Text('Tem certeza???'),
                     actions: <Widget>[
                       FlatButton(
@@ -52,7 +52,7 @@ class UserTile extends StatelessWidget {
                   ),
                 ).then((confimed) {
                   if (confimed) {
-                    Provider.of<Users>(context, listen: false).remove(user);
+                    Provider.of<Events>(context, listen: false).remove(event);
                   }
                 });
               },

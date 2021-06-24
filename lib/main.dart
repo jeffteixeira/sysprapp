@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/provider/users.dart';
+import 'package:flutter_crud/provider/events.dart';
 import 'package:flutter_crud/routes/app_routes.dart';
-import 'package:flutter_crud/views/user_form.dart';
-import 'package:flutter_crud/views/user_list.dart';
+import 'package:flutter_crud/views/event_form.dart';
+import 'package:flutter_crud/views/event_list.dart';
 import 'package:flutter_crud/views/login_page.dart';
 
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (ctx) => Users(),
+          create: (ctx) => Events(),
         ),
       ],
       child: MaterialApp(
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           AppRoutes.HOME: (_) => LoginPage(),
-          AppRoutes.USER_LIST: (_) => UserList(),
-          AppRoutes.USER_FORM: (_) => UserForm()
+          AppRoutes.EVENT_LIST: (_) => EventList(),
+          AppRoutes.EVENT_FORM: (_) => EventForm(),
         },
       ),
     );

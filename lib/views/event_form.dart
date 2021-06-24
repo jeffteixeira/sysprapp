@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/models/user.dart';
-import 'package:flutter_crud/provider/users.dart';
+import 'package:flutter_crud/models/event.dart';
+import 'package:flutter_crud/provider/events.dart';
 import 'package:provider/provider.dart';
 
-class UserForm extends StatefulWidget {
+class EventForm extends StatefulWidget {
   @override
-  _UserFormState createState() => _UserFormState();
+  _EventFormState createState() => _EventFormState();
 }
 
-class _UserFormState extends State<UserForm> {
+class _EventFormState extends State<EventForm> {
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
 
-  void _loadFormData(User user) {
-    if (user != null) {
-      _formData['id'] = user.id;
-      _formData['name'] = user.name;
-      _formData['date'] = user.date;
-      _formData['spending'] = user.spending;
-      _formData['donation'] = user.donation;
+  void _loadFormData(Event event) {
+    if (event != null) {
+      _formData['id'] = event.id;
+      _formData['name'] = event.name;
+      _formData['date'] = event.date;
+      _formData['spending'] = event.spending;
+      _formData['donation'] = event.donation;
     }
   }
 
@@ -27,8 +27,8 @@ class _UserFormState extends State<UserForm> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final User user = ModalRoute.of(context).settings.arguments;
-    _loadFormData(user);
+    final Event event = ModalRoute.of(context).settings.arguments;
+    _loadFormData(event);
   }
 
   @override
@@ -45,8 +45,8 @@ class _UserFormState extends State<UserForm> {
               if (isValid) {
                 _form.currentState.save();
 
-                Provider.of<Users>(context, listen: false).put(
-                  User(
+                Provider.of<Events>(context, listen: false).put(
+                  Event(
                     id: _formData['id'],
                     name: _formData['name'],
                     date: _formData['date'],

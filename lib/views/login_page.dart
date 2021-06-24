@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
                 keyboardType: TextInputType.text,
                 style: new TextStyle(color: Colors.white, fontSize: 20),
                 decoration: InputDecoration(
-                    labelText: "Nome de Usuário",
+                    labelText: "Nome do Usuário",
                     labelStyle: TextStyle(color: Colors.white)),
               ),
               Divider(),
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                 autofocus: true,
                 obscureText: true,
                 keyboardType: TextInputType.text,
-                style: new TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(color: Colors.white, fontSize: 20),
                 decoration: InputDecoration(
                     labelText: "Senha",
                     labelStyle: TextStyle(color: Colors.white)),
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: RaisedButton(
                     onPressed: () => {
                       Navigator.of(context).pushNamed(
-                        AppRoutes.USER_LIST,
+                        AppRoutes.EVENT_LIST,
                       ),
                     },
                     child: Text(

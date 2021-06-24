@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class User {
+class Event {
   final String id;
   final String name;
   final String date;
   final String spending;
   final String donation;
 
-  const User({
+  const Event({
     this.id,
     @required this.name,
     @required this.date,
