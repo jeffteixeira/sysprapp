@@ -15,7 +15,7 @@ class EventTile extends StatelessWidget {
     return ListTile(
       leading: avatar,
       title: Text(event.name),
-      subtitle: Text(event.date),
+      subtitle: Text(event.startDate),
       trailing: Container(
         width: 100,
         child: Row(

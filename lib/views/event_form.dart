@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sysprapp/models/event.dart';
 import 'package:sysprapp/provider/events.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 class EventForm extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class EventForm extends StatefulWidget {
 }
 
 class _EventFormState extends State<EventForm> {
+  DateTime _dateTime;
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
@@ -17,9 +19,12 @@ class _EventFormState extends State<EventForm> {
     if (event != null) {
       _formData['id'] = event.id;
       _formData['name'] = event.name;
-      _formData['date'] = event.date;
+      _formData['startDate'] = event.startDate;
+      _formData['endDate'] = event.endDate;
       _formData['spending'] = event.spending;
       _formData['donation'] = event.donation;
+      _formData['volunteers'] = event.volunteers;
+      _formData['details'] = event.details;
     }
   }
 
@@ -49,9 +54,12 @@ class _EventFormState extends State<EventForm> {
                   Event(
                     id: _formData['id'],
                     name: _formData['name'],
-                    date: _formData['date'],
+                    startDate: _formData['startDate'],
+                    endDate: _formData['endDate'],
                     spending: _formData['spending'],
                     donation: _formData['donation'],
+                    volunteers: _formData['volunteers'],
+                    details: _formData['details'],
                   ),
                 );
 
@@ -84,19 +92,42 @@ class _EventFormState extends State<EventForm> {
                 onSaved: (value) => _formData['name'] = value,
               ),
               TextFormField(
-                initialValue: _formData['date'],
-                decoration: InputDecoration(labelText: 'Data'),
-                onSaved: (value) => _formData['date'] = value,
+                initialValue: _formData['startDate'],
+                decoration: InputDecoration(labelText: 'Data de Início'),
+                onSaved: (value) => _formData['startDate'] = value,
               ),
               TextFormField(
+                initialValue: _formData['endDate'],
+                decoration: InputDecoration(labelText: 'Data de Termino'),
+                onSaved: (value) => _formData['endDate'] = value,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 initialValue: _formData['spending'],
                 decoration: InputDecoration(labelText: 'Despesas'),
                 onSaved: (value) => _formData['spending'] = value,
               ),
               TextFormField(
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 initialValue: _formData['donation'],
                 decoration: InputDecoration(labelText: 'Doações'),
                 onSaved: (value) => _formData['donation'] = value,
+              ),
+              TextFormField(
+                initialValue: _formData['volunteers'],
+                decoration: InputDecoration(labelText: 'Voluntários'),
+                onSaved: (value) => _formData['volunteers'] = value,
+              ),
+              TextFormField(
+                initialValue: _formData['details'],
+                decoration: InputDecoration(labelText: 'Detalhes'),
+                onSaved: (value) => _formData['details'] = value,
               ),
             ],
           ),
