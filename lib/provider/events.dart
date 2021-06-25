@@ -32,9 +32,12 @@ class Events with ChangeNotifier {
         (_) => Event(
           id: event.id,
           name: event.name,
-          date: event.date,
+          startDate: event.startDate,
+          endDate: event.endDate,
           spending: event.spending,
           donation: event.donation,
+          volunteers: event.volunteers,
+          details: event.details,
         ),
       );
     } else {
@@ -44,9 +47,12 @@ class Events with ChangeNotifier {
         () => Event(
           id: id,
           name: event.name,
-          date: event.date,
+          startDate: event.startDate,
+          endDate: event.endDate,
           spending: event.spending,
           donation: event.donation,
+          volunteers: event.volunteers,
+          details: event.details,
         ),
       );
     }

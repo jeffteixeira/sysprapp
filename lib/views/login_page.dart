@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Image.asset('assets/images/logo_home.png'),
               TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.text,
