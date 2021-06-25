@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/components/event_tile.dart';
-import 'package:flutter_crud/provider/events.dart';
-import 'package:flutter_crud/routes/app_routes.dart';
+import 'package:sysprapp/components/event_tile.dart';
+import 'package:sysprapp/provider/events.dart';
+import 'package:sysprapp/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class EventList extends StatelessWidget {

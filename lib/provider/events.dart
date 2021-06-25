@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/data/dummy_events.dart';
-import 'package:flutter_crud/models/event.dart';
+import 'package:sysprapp/data/dummy_events.dart';
+import 'package:sysprapp/models/event.dart';
 
 class Events with ChangeNotifier {
   final Map<String, Event> _items = {...DUMMY_EVENTS};

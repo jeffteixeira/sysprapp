@@ -1,4 +1,4 @@
-import 'package:flutter_crud/models/event.dart';
+import 'package:sysprapp/models/event.dart';
 
 const DUMMY_EVENTS = {
   '1': const Event(

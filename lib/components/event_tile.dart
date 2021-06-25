@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/models/event.dart';
-import 'package:flutter_crud/provider/events.dart';
-import 'package:flutter_crud/routes/app_routes.dart';
+import 'package:sysprapp/models/event.dart';
+import 'package:sysprapp/provider/events.dart';
+import 'package:sysprapp/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class EventTile extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/models/event.dart';
-import 'package:flutter_crud/provider/events.dart';
+import 'package:sysprapp/models/event.dart';
+import 'package:sysprapp/provider/events.dart';
 import 'package:provider/provider.dart';
 
 class EventForm extends StatefulWidget {
